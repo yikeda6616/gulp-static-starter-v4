@@ -10,10 +10,12 @@ $ gulp
 
 ## Default Tasks
 
-- Pug Compile
+- Pug Compile(Beautified)
 - Sass Compile
 - CSS Autoprefix
+- CSS Minify
 - JavaScript ES6 Compile
+- JavaScript Minify
 - Image Minify
 - BrowserSync(auto reload)
 
