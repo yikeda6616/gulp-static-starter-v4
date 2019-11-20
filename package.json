@@ -4,7 +4,8 @@
   "description": "gulp v4.0 static starter kit",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npx gulp"
   },
   "keywords": [],
   "author": "Yasushi Ikeda",
@@ -25,5 +26,11 @@
     "gulp-sourcemaps": "^2.6.5",
     "gulp-uglify": "^3.0.2",
     "uglify-es": "^3.3.9"
-  }
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
 }

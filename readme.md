@@ -1,12 +1,13 @@
 # Gulp 4.0 Static Starter Kit
 
-## Getting Started
+## Getting Started (Updated: 2019.11.20)
 
 ```
-$ npm i -g gulp-cli
 $ npm i
-$ gulp
+$ npm start
 ```
+
+I removed `npm i -g gulp-cli` as we can simply call gulp command by `npx gulp` without installing cli grobally.
 
 ## Default Tasks
 
@@ -19,13 +20,13 @@ $ gulp
 - Image Minify
 - BrowserSync(auto reload)
 
-## Testing Environment
+## Testing Environment (Last Updated: 2019.11.20)
 
 ```
-$ gulp -v
-CLI version 2.1.0
-Local version 4.0.0
+$ npx gulp -v
+CLI version 2.2.0
+Local version 4.0.2
 
 $ node -v
-v10.15.3
+v12.13.0
 ```
