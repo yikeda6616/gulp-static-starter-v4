@@ -1,6 +1,7 @@
 module.exports = {
   pug: require('gulp-pug'),
   sass: require('gulp-sass'),
+  ts: require('gulp-typescript'),
   minifyCSS: require('gulp-csso'),
   concat: require('gulp-concat'),
   browserSync: require('browser-sync'),
