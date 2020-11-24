@@ -1,1 +1,1 @@
-*,::after,::before{margin:0;padding:0;box-sizing:border-box}.wrapper{font-family:'Courier New',Courier,monospace;display:-webkit-box;display:flex;-webkit-box-pack:center;justify-content:center;-webkit-box-align:center;align-items:center;height:70vh}.wrapper h1{font-weight:400}
+*,::after,::before{margin:0;padding:0;box-sizing:border-box}.wrapper{font-family:'Courier New',Courier,monospace;display:flex;justify-content:center;align-items:center;height:70vh}.wrapper h1{font-weight:400}
