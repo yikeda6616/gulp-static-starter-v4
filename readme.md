@@ -36,9 +36,9 @@ This config can be modified in `gulpfile.js/index.js`.
 
 ```
 $ npx gulp -v
-CLI version 2.2.0
+CLI version 2.3.0
 Local version 4.0.2
 
 $ node -v
-v12.13.0
+v14.15.1
 ```
