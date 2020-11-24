@@ -65,7 +65,7 @@ function js() {
 }
 
 function img() {
-  return src('./src/img/**')
+  return src('./src/img/**/**')
     .pipe($.changed('./dist/img/'))
     .pipe(
       $.imagemin({
