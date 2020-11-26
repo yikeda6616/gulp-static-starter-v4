@@ -30,9 +30,13 @@ function html() {
 
 function css() {
   return src(`${path.src}/scss/*.scss`)
+    .pipe(
+      $.plumber({
+        errorHandler: $.notify.onError('Error: <%= error.message %>'),
+      })
+    )
     .pipe($.sourcemaps.init())
     .pipe($.sass())
-    .on('error', $.sass.logError)
     .pipe($.autoprefixer())
     .pipe($.sourcemaps.write())
     .pipe(dest(`${path.dist}/css`))
@@ -53,7 +57,11 @@ function css() {
 
 function js() {
   return src(`${path.src}/js/**/*.js`, { sourcemaps: true })
-    .pipe($.plumber())
+    .pipe(
+      $.plumber({
+        errorHandler: $.notify.onError('Error: <%= error.message %>'),
+      })
+    )
     .pipe(uglify({ output: { comments: /^!/ } }))
     .pipe(
       $.concat('main.min.js', {
