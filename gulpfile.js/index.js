@@ -4,27 +4,26 @@ const uglify = $.composer($.uglifyes, $.composer);
 
 const path = {
   src: './src',
-  dist: './dist'
-}
-
+  dist: './dist',
+};
 
 function html() {
   return src([`${path.src}/pug/*.pug`, `!${path.src}/pug/**/_*.pug`])
     .pipe(
       $.plumber({
-        errorHandler: $.notify.onError('Error: <%= error.message %>')
+        errorHandler: $.notify.onError('Error: <%= error.message %>'),
       })
     )
     .pipe(
       $.pug({
-        pretty: true
+        pretty: true,
       })
     )
     .pipe(dest(path.dist))
     .pipe(
       $.browserSync.reload({
         stream: true,
-        once: true
+        once: true,
       })
     );
 }
@@ -39,7 +38,7 @@ function css() {
     .pipe(dest(`${path.dist}/css`))
     .pipe(
       $.rename({
-        suffix: '.min'
+        suffix: '.min',
       })
     )
     .pipe($.minifyCSS())
@@ -47,7 +46,7 @@ function css() {
     .pipe(
       $.browserSync.reload({
         stream: true,
-        once: true
+        once: true,
       })
     );
 }
@@ -58,14 +57,14 @@ function js() {
     .pipe(uglify({ output: { comments: /^!/ } }))
     .pipe(
       $.concat('main.min.js', {
-        newLine: '\n'
+        newLine: '\n',
       })
     )
     .pipe(dest(`${path.dist}/js`, { sourcemaps: true }))
     .pipe(
       $.browserSync.reload({
         stream: true,
-        once: true
+        once: true,
       })
     );
 }
@@ -75,7 +74,7 @@ function img() {
     .pipe($.changed(`${path.dist}/img/`))
     .pipe(
       $.imagemin({
-        optimizationLevel: 3
+        optimizationLevel: 3,
       })
     )
     .pipe(dest(`${path.dist}/img/`));
@@ -84,10 +83,10 @@ function img() {
 function bs() {
   $.browserSync.init({
     server: {
-      baseDir: path.dist
+      baseDir: path.dist,
     },
     notify: true,
-    xip: false
+    xip: false,
   });
 }
 
